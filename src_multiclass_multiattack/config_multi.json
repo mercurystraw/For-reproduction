@@ -1,0 +1,65 @@
+{
+    "DATASET": "cifar10",
+    "C0": 3,
+    "C1": [
+         0,5,7,9
+    ],
+    "SUPER_C0": [
+        6,
+        4,
+	8
+
+    ],
+    "SUPER_C1": [
+        0,
+        8,
+        4,
+        1,
+        6
+    ],
+    "MODEL_TYPE": "resnet18",
+    "EPOCH": 100,
+    "BATCH_SIZE": 32,
+    "LR": 0.001,
+    "NUM_POISONING_SAMPLE": 1000,
+    "PATIENCE": 4,
+    "NUM_IMG_WARMUP": 10,
+    "NUM_IMG_DETECTION": 3,
+    "CONF_INIT": 0.5,
+
+    "ATTACKS": {
+        "chessboard": {
+	    "DATASET":"cifar10",
+            "C0": 0,
+            "C1": [3,5,7,9],
+            "PATTERN_TYPE": "perturbation",
+            "PERTURBATION_SHAPE": "chessboard",
+            "PERTURBATION_SIZE": 0.04,
+            "PATCH_TYPE": "none",
+            "MASK_SIZE": null,
+            "MARGIN": 0
+        },
+	"square": {
+	    "DATASET":"cifar10",
+            "C0": 5,
+            "C1": [0,3,7,9],
+            "PATTERN_TYPE": "perturbation",
+            "PERTURBATION_SHAPE": "square",
+            "PERTURBATION_SIZE": 0.5,
+            "PATCH_TYPE": "none",
+            "MASK_SIZE": null,
+            "MARGIN": 0
+	},
+	"X": {
+	    "DATASET":"mnist",
+            "C0": 3,
+            "C1": [0,5,7,9],
+            "PATTERN_TYPE": "perturbation",
+            "PERTURBATION_SHAPE": "X",
+            "PERTURBATION_SIZE": 0.3,
+            "PATCH_TYPE": "none",
+            "MASK_SIZE": null,
+            "MARGIN": 0
+	}
+    }
+}
